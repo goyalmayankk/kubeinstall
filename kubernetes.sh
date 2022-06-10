@@ -34,3 +34,6 @@ sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes --nogpgcheck
 
 sudo systemctl enable --now kubelet
+
+sudo rm /etc/containerd/config.toml
+sudo systemctl restart containerd
